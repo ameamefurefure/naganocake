@@ -12,6 +12,15 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
 
       ## Rememberable
       t.datetime :remember_created_at
+      
+      t.string :last_name, null: false#姓
+      t.string :first_name, null: false#名
+      t.string :last_name_kana, null: false#姓カナ
+      t.string :first_name_kana, null: false#名カナ
+      t.string :postal_code, null: false#郵便番号
+      t.string :address, null: false#住所
+      t.string :telephone_number, null: false#電話番号
+      t.boolean :is_avtive, null: false,default: "TRUE"#会員ステータス
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
