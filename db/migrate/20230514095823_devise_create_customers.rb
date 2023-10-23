@@ -20,7 +20,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       t.string :postal_code, null: false#郵便番号
       t.string :address, null: false#住所
       t.string :telephone_number, null: false#電話番号
-      t.boolean :is_avtive, null: false,default: "TRUE"#会員ステータス
+      t.boolean :is_acvtive, null: false,default: "TRUE"#会員ステータス
 
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
