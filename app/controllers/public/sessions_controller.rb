@@ -43,6 +43,7 @@ class Public::SessionsController < Devise::SessionsController
       #end
     #end
     
+    #取得したアカウントのパスと入力されたパス一致している かつ　is_active == false（退会している）
     if @customer.valid_password?(paramas[:customers][:password]) && @customer.is_active == false
       redirect_to new_customer_registration_path
     else
