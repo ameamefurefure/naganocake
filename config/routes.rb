@@ -28,6 +28,7 @@ get 'customers' =>'public/customers#show'
 get '/' =>'public/homes#top'#ECサイト側_トップページ
 get 'about' =>'public/homes#about'#ECサイト側_アバウトページ
 get 'customers/information/edit' =>'public/customers#edit'#ECサイト側_顧客の登録情報編集画面
+get 'customers/quit' =>'public/customers#quit'#ECサイト側_顧客の退会確認画面
 
 #管理者側のルーティング設定
 namespace :admin do
