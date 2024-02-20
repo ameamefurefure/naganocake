@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #namespace :public do
+    #get 'cart_items/index'
+  #end
   #namespace :admin do
    # get 'homes/top'
   #end
@@ -31,6 +34,7 @@ get 'customers/information/edit' =>'public/customers#edit'#ECサイト側_顧客
 get 'customers/quit' =>'public/customers#quit'#ECサイト側_顧客の退会確認画面
 get 'items' =>'public/items#index'#ECサイト側_商品一覧画面
 get 'items/:id' =>'public/items#show'#ECサイト側_商品詳細画面
+get 'cart_items' =>'public/cart_items#index'#ECサイト側_カート画面
 
 #管理者側のルーティング設定
 namespace :admin do
