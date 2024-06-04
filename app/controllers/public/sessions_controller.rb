@@ -8,7 +8,8 @@ class Public::SessionsController < Devise::SessionsController
   end
 
   def after_sign_out_path_for(resource)
-    root_path
+    # root_path
+    `controller: 'public/homes', action: 'top'`
   end
 
   # GET /resource/sign_in
@@ -30,21 +31,21 @@ class Public::SessionsController < Devise::SessionsController
   def customer_state#退会しているかを判断するメソッド
     #[処理1]入力されたemailからアカウントを1件取得
     @customer = Customer.find_by(email: params[:customer][:email])
-    
+
     #アカウントを取得できなかった場合、このメソッドを終了
     return if !@customer
-    
+
     #[処理2]取得したアカウントのパスと入力されたパス一致しているかを判別
-    #if @customer.valid_password?(paramas[:customers][:password]) 
+    #if @customer.valid_password?(paramas[:customers][:password])
       #if @customer.is_active == false
         #redirect_to new_customer_registration_path
       #else
         #return
       #end
     #end
-    
+
     #取得したアカウントのパスと入力されたパス一致している かつ　is_active == false（退会している）
-    if @customer.valid_password?(paramas[:customers][:password]) && @customer.is_active == false
+    if @customer.valid_password?(params[:customer][:password]) && @customer.is_active == false
       redirect_to new_customer_registration_path
     else
       return

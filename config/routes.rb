@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   #namespace :public do
     #get 'orders/new'
     #get 'orders/confirm'
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
   #namespace :admin do
    # get 'homes/top'
   #end
+
+  # namespace :admin do
+  #   get 'orders/show'
+  # end
 
   # devise_for :admins
   # devise_for :customers
@@ -64,6 +69,7 @@ end
 # get 'admin/customers' =>'admin/customers#index'#管理者側_顧客一覧画面
 # get 'admin/customers/:id' =>'admin/customers#show'#管理者側_顧客詳細画面
 # get 'admin/customers/:id/edit' =>'admin/customers#edit'#管理者側_顧客編集画面
-get 'admin' =>'admin/homes#top'#管理者トップ画面
+get 'admin' =>'admin/homes#top'#管理者側_トップ画面
+get 'admin/orders/:id' =>'admin/orders#show'#管理者_注文詳細画面
 
 end
